@@ -1,4 +1,4 @@
-var productData = {
+var image_details = {
     "id": "1",
     "name": "Men Navy Blue Solid Sweatshirt",
     "preview": "https://assets.myntassets.com/h_1440,q_100,w_1080/v1/assets/images/7579188/2018/11/5/08a7b230-ee8f-46c0-a945-4e835a3c01c01541402833619-United-Colors-of-Benetton-Men-Sweatshirts-1271541402833444-1.jpg",
@@ -25,32 +25,31 @@ var productData = {
 // apply data to page
 
 // main image
-document.getElementById("main_image").src = productData["preview"];
+document.getElementById("main_image").src = image_details["preview"];
 
-// item name
-document.getElementById("name").innerHTML = productData["name"];
+// image product name
+document.getElementById("name").innerHTML = image_details["name"];
 
-// item brand
-document.getElementById("brand").innerHTML = productData["brand"];
+// image product brand
+document.getElementById("brand").innerHTML = image_details["brand"];
 
-// item price
-document.getElementById("price_value").innerHTML = productData["price"];
+// image product price
+document.getElementById("price_value").innerHTML = image_details["price"];
 
-// item description
-document.getElementById("description").innerHTML = productData["description"];
+// image product description
+document.getElementById("description").innerHTML = image_details["description"];
 
-// item images
-for(let i = 0; i < productData["photos"].length; i++)
+// product images
+for(let i = 0; i < image_details["photos"].length; i++)
 {
-    // <img id="image_0" class="active" onclick="update_main_image(this);" src="">
-
     let temp_image_tag = document.createElement("img");
     
     temp_image_tag.id = "image_" + i;
     temp_image_tag.setAttribute("onclick", "update_main_image(this);");
-    temp_image_tag.src = productData["photos"][i];
+    temp_image_tag.src = image_details["photos"][i];
 
-    if(i == 0) temp_image_tag.classList.add("active");
+    if(i == 0) 
+    temp_image_tag.classList.add("active");
 
     document.getElementById("preview_images").appendChild(temp_image_tag);
 }
